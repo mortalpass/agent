@@ -1,0 +1,69 @@
+{
+  "name": "agent",
+  "version": "0.1.0",
+  "description": "A CLI agent for change-impact investigation: maps touchpoints, plans and patches changes, verifies them in a sandbox, and reports risk.",
+  "type": "module",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortalpass/agent.git"
+  },
+  "homepage": "https://github.com/mortalpass/agent#readme",
+  "bugs": {
+    "url": "https://github.com/mortalpass/agent/issues"
+  },
+  "scripts": {
+    "start": "npx tsx src/index.ts",
+    "dev": "npx tsx watch src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "investigate": "tsx src/cli/investigate.ts",
+    "lint": "biome check src tests",
+    "format": "biome check --write src tests",
+    "knip": "knip"
+  },
+  "keywords": [
+    "agent",
+    "llm",
+    "rag",
+    "dashscope",
+    "qwen",
+    "change-impact",
+    "code-analysis",
+    "sandbox"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.3"
+  },
+  "overrides": {
+    "body-parser": ">=2.4.0",
+    "@hono/node-server": ">=2.1.6",
+    "hono": ">=4.13.16",
+    "minimatch": ">=11.0.1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "better-sqlite3": "^12.11.1",
+    "commander": "^14.0.3",
+    "dependency-cruiser": "^17.4.3",
+    "dotenv": "^16.4.7",
+    "eventsource-parser": "^3.1.1",
+    "execa": "^9.6.1",
+    "openai": "^6.49.0",
+    "p-limit": "^7.3.3",
+    "tinyglobby": "^0.2.17",
+    "ts-morph": "^28.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.2",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20.17.0",
+    "knip": "^6.44.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
